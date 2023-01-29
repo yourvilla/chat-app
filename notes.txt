@@ -1,0 +1,10 @@
+web sockets allow for full duplex comm
+web socket is a separate protocol from http
+persisitent connection b/w client and server
+
+socket.broadcast.emit("message", "Welcome new user");//when want to send a message to everyone the client joins itself
+socket.emit("countUpdated", count);//emit for single connection
+io.emit("countUpdated", count);//emit for multiple connection
+  socket.on("disconnect", () => {//disconnect
+    io.emit("message", "User has left");
+  });
