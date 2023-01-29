@@ -52,7 +52,7 @@ io.on("connection", (socket) => {
       .emit("message", generateMsg(`${user.username} has joined`, "Admin"));
 
     io.to(user.room).emit("roomData", {
-      room: user.username,
+      room: user.room,
       users: getUserInRoom(user.room),
     });
     callback();
@@ -88,7 +88,7 @@ io.on("connection", (socket) => {
         generateMsg(`${user.username} has left`, "Admin")
       );
       io.to(user.room).emit("roomData", {
-        room: user.username,
+        room: user.room,
         users: getUserInRoom(user.room),
       });
     }
