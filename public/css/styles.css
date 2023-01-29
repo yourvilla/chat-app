@@ -71,7 +71,7 @@ button:disabled {
     box-shadow: 0px 0px 17px 1px #1D1F26;
     background: #F7F7FA;
     padding: 24px;
-    width: 250px;
+    width: 300px;
 }
 
 .centered-form button {
@@ -181,3 +181,65 @@ button:disabled {
     font-weight: 300;
     padding: 12px 24px 0 24px;
 }
+
+/* @media only screen and (max-width: 600px) {
+ 
+    .centered-form__box {
+        box-shadow: 0px 0px 17px 1px #1D1F26;
+        background: #F7F7FA;
+        padding: 24px;
+        width: 450px;
+    }
+  } */
+
+  @media screen and (max-width: 480px) {
+    /* .centered-form__box {
+        width: 75%;
+    }
+    html {
+        font-size: 25px;
+    }
+   
+   
+    */
+    .chat__sidebar {
+        /* height: 100vh;
+        color: white;
+        background: #333744;*/
+     position: static;
+        width: 125px; 
+        height: 90vh;
+        overflow-y: clip !important;
+    }
+    .chat__messages {
+        /* position: fixed;
+        left: 125px;
+        top: 0;
+        bottom: 200px; */
+        padding-bottom: 100px;
+     }
+    .compose {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 10vh;
+        background: #333744;
+        padding-left: 10px;
+        padding-right: 0px;
+     }
+    .chat{
+        overflow: hidden;
+    }
+    /* .compose form {
+     flex-direction: column;
+    } */
+    .compose button {
+        font-size: 14px;
+        padding: 5px;
+        font-size: 10px;
+    }
+  
+
+    
+  }

@@ -17,25 +17,26 @@ const { username, room } = Qs.parse(location.search, {
 });
 
 const autoScroll = () => {
+  $messageContainer.scrollTop = $messageContainer.scrollHeight;
   // //New message element
-  const $newMessage = $messageContainer.lastElementChild;
-  const newMessageStyles = getComputedStyle($newMessage);
-  const newMessageMargin = parseInt(newMessageStyles.marginBottom);
+  // const $newMessage = $messageContainer.lastElementChild;
+  // const newMessageStyles = getComputedStyle($newMessage);
+  // const newMessageMargin = parseInt(newMessageStyles.marginBottom);
 
-  const newMessageHeight = $newMessage.offsetHeight + newMessageMargin;
+  // const newMessageHeight = $newMessage.offsetHeight + newMessageMargin;
 
-  // //visible height
-  const visibleHeight = $messageContainer.offsetHeight;
-  const containerHeight = $messageContainer.scrollHeight;
-  var $messageContainer = document.getElementById("your_div");
+  // // //visible height
+  // const visibleHeight = $messageContainer.offsetHeight;
+  // const containerHeight = $messageContainer.scrollHeight;
+  // var $messageContainer = document.getElementById("your_div");
 
-  // how far i scrolled
-  const scrollOffset = $messageContainer.scrollTop + visibleHeight;
-  if (containerHeight - newMessageHeight <= scrollOffset) {
-    $messageContainer.scrollTop = $messageContainer.scrollHeight;
-  }
+  // // how far i scrolled
+  // const scrollOffset = $messageContainer.scrollTop + visibleHeight;
+  // if (containerHeight - newMessageHeight <= scrollOffset) {
+  //   $messageContainer.scrollTop = $messageContainer.scrollHeight;
+  // }
 
-  console.log(newMessageStyles);
+  // console.log(newMessageStyles);
 };
 
 socket.on("message", (message) => {
